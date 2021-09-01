@@ -1,0 +1,129 @@
+/* Custom styles */
+
+.outcome {
+  position: absolute;
+  bottom: 32px;
+  left: 200px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 7px;
+  display: inline;
+}
+
+.card-header .bi {
+  transition: 0.3s transform ease-in-out;
+}
+.card-header .collapsed .bi {
+  transform: rotate(90deg);
+}
+
+.hidden {
+  display: none;
+}
+
+.fade-in-out {
+  opacity: 1;
+  animation: fade 2s linear;
+}
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.score {
+  font-size: 60px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  position: absolute;
+  right: 50px;
+  bottom: 100px;
+  padding: 10px;
+}
+
+.score::before {
+  content: 'Score: ';
+}
+
+.flex div {
+  padding: 12px;
+}
+
+.flex button {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.ans {
+  width: fit-content;
+}
+
+body {
+  height: 100vh;
+  background-image: linear-gradient(
+    90deg,
+    #020024 0%,
+    #090979 35%,
+    #00d4ff 100%
+  );
+}
+
+.question-container {
+  opacity: 1;
+  transition: all 500ms;
+}
+
+.hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+}
+
+.fade-out {
+  animation: fadeOut ease 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s linear;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .score {
+    font-size: 30px;
+    right: 20px;
+    bottom: 30px;
+  }
+  .outcome {
+    display: none;
+  }
+}
+
+.footer {
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 20px;
+}

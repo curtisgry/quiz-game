@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="app.css">
+    <title>Trivia</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container h-100 d-flex flex-column align-items-center">
+        <div class="card w-100 mt-4 mb-4">
+            <h1 class="card-header display-1 form-signin-heading">
+                <a class="d-block link-dark text-decoration-none d-flex justify-content-between" href='#'
+                    data-bs-toggle="collapse" data-bs-target="#collapseMe">
+                    Trivia!
+                    <i class="bi bi-chevron-down"></i>
+                </a>
+            </h1>
+            <div id="collapseMe" class="collapse show">
+                <div class="card-body">
+                    <form action="">
+                        <br>
+                        <label for="trivia_category">Select Category: </label>
+                        <select name="trivia_category" class="cat form-control">
+                            <option value="any">Select Category</option>
+                            <option value="9">General Knowledge</option>
+                            <option value="10">Entertainment: Books</option>
+                            <option value="11">Entertainment: Film</option>
+                            <option value="12">Entertainment: Music</option>
+                            <option value="13">Entertainment: Musicals &amp; Theatres</option>
+                            <option value="14">Entertainment: Television</option>
+                            <option value="15">Entertainment: Video Games</option>
+                            <option value="16">Entertainment: Board Games</option>
+                            <option value="17">Science &amp; Nature</option>
+                            <option value="18">Science: Computers</option>
+                            <option value="19">Science: Mathematics</option>
+                            <option value="20">Mythology</option>
+                            <option value="21">Sports</option>
+                            <option value="22">Geography</option>
+                            <option value="23">History</option>
+                            <option value="24">Politics</option>
+                            <option value="25">Art</option>
+                            <option value="26">Celebrities</option>
+                            <option value="27">Animals</option>
+                            <option value="28">Vehicles</option>
+                            <option value="29">Entertainment: Comics</option>
+                            <option value="30">Science: Gadgets</option>
+                            <option value="31">Entertainment: Japanese Anime &amp; Manga</option>
+                            <option value="32">Entertainment: Cartoon &amp; Animations</option>
+                        </select>
+
+
+                        <label for="trivia_difficulty">Select Difficulty: </label>
+                        <select name="trivia_difficulty" class="dif form-control">
+                            <option value="any">Select Dificulty</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+
+                        <br>
+
+                        <button class="qbtn btn btn-lg btn-primary btn-block" type="submit" data-bs-toggle="collapse"
+                            data-bs-target="#collapseMe">Start!</button>
+                        <button class="reset-btn btn btn-lg btn-danger btn-block" type="submit">Reset</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="question-container w-100 hide">
+            <div class="card question">
+                <div class="card-body">
+                    <h2 class="card-title qcategory text-decoration-underline text-muted pb-2">Category</h2>
+                    <h3 class="question">Question</h3>
+                    <form class="flex" action="submit">
+                        <div class="flex-item">
+                            <input id="a" value="a" name="q" type="radio">
+                            <label class="ans" for="a"></label>
+                        </div>
+                        <div class="flex-item">
+                            <input id="b" value="b" name="q" type="radio">
+                            <label class="ans" for="b"></label>
+                        </div>
+                        <div class="flex-item">
+                            <input id="c" value="c" name="q" type="radio">
+                            <label class="ans" for="c"></label>
+                        </div>
+                        <div class="flex-item">
+                            <input id="d" value="d" name="q" type="radio">
+                            <label class="ans" for="d"></label>
+                        </div>
+
+                        <button class="btn btn-primary sub-btn" type="submit">Check Answer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>Made using <a href="https://opentdb.com/">Open Trivia</a> API</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+
+</html>
